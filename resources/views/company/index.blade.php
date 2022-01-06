@@ -27,9 +27,9 @@
               <tr>
                 <th>No</th>
                 <th>Nama</th>
-                <th>email</th>
-                <th>logo</th>
-                <th>website</th>
+                <th>Email</th>
+                <th>Logo</th>
+                <th>Website</th>
                 <th>Pilihan</th>
               </tr>
             </thead>

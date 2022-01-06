@@ -21,3 +21,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/company', CompanyController::class);
+Route::resource('/employee', EmployeeController::class);
