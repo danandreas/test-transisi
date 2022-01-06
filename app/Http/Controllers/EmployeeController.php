@@ -99,4 +99,10 @@ class EmployeeController extends Controller
         Employee::destroy($id);
         return redirect('/employee')->with('status','Hapus Sukses');
     }
+
+    public function haveCompany(Request $request)
+    {
+        $record = Company::get();
+        return $record;
+    }
 }

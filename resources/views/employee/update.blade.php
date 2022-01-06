@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -19,11 +19,10 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    {{-- <label for="inlineFormCustomSelect">Select Category</label> --}}
-                    <select name="company" class="custom-select mr-sm-2" id="inlineFormCustomSelect">
-                        <option selected>{{$employee->id}}</option>
+                    <select name="company" class="select2 custom-select mr-sm-2" id="inlineFormCustomSelect">
+                        <option value="">Pilih</option>
                         @foreach ($company as $option)
-                            <option value="{{$option->id}}">{{$option->nama}}</option>
+                            <option value="{{$option->id}}" {{ $option->id == $employee->company_id ? 'selected' : ''}}>{{$option->nama}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -34,5 +33,10 @@
 </div>
 </div>
 
-
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $('.select2').select2();
+});
+</script>
 @endsection
